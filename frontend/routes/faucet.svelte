@@ -76,25 +76,6 @@
         return balance;
     }
 
-    // const transfer = async () => {
-    //     const principalId = await window.ic.plug.agent.getPrincipal();
-
-    //     let ledger = getReadActor('yeeiw-3qaaa-aaaah-qcvmq-cai', ledger_idl);
-    //     let account = getAccountIdentifier(principalId);
-    //     console.log("Send")
-
-
-    //     let balance = await ledger.send_dfx(
-    //     {
-    //         memo: 0,
-    //         amount: {"e8s": 100000},
-    //         fee: {"e8s": 100},
-    //         from_subaccount: [],
-    //         to: account,
-    //         created_at_time: []
-    //     });
-    // }
-
     const transfer2 = async () => {
         // NNS Canister Id as an example
         const tokenCanisterId = 'yeeiw-3qaaa-aaaah-qcvmq-cai'
@@ -106,9 +87,6 @@
         });
 
         const principalId = await window.ic.plug.agent.getPrincipal();
-
-        // let ledger = getReadActor('yeeiw-3qaaa-aaaah-qcvmq-cai', ledger_idl);
-        // let account = getAccountIdentifier(principalId);
 
         // A partial Interface factory
         // for the NNS Canister UI

@@ -16,13 +16,6 @@
   let buttonMessage = "Mint";
   let resultMessage = "";
 
-  // const list_nfts = async () => {
-  //   const res = await nft.list_nfts_owners()
-  //   console.log(res)
-  //   nfts = res
-  //   return nfts
-  // }
-
   const listMyTokens = async (pricipal) => {
     console.log("Getting tokens for principal" + principal)
     const myTokens = await nft.listMyTokens(pricipal)
@@ -96,13 +89,9 @@
 
         const principalId = await window.ic.plug.agent.getPrincipal();
 
-        // let ledger = getReadActor('yeeiw-3qaaa-aaaah-qcvmq-cai', ledger_idl);
-        // let account = getAccountIdentifier(principalId);
-
         // A partial Interface factory
         // for the NNS Canister UI
         // Check the `plug authentication - nns` for more
-
         const nftIDL  = ({ IDL }) => {
           const Colors = IDL.Record({ 'color1' : IDL.Text, 'color2' : IDL.Text });
           return IDL.Service({
@@ -138,24 +127,13 @@
 
         const principalId = await window.ic.plug.agent.getPrincipal();
 
-        // let ledger = getReadActor('yeeiw-3qaaa-aaaah-qcvmq-cai', ledger_idl);
-        // let account = getAccountIdentifier(principalId);
-
-        // A partial Interface factory
-        // for the NNS Canister UI
-        // Check the `plug authentication - nns` for more
         const tokenFaucetIDL = ledger_idl;
 
-        // Create an actor to interact with the NNS Canister
-        // we pass the NNS Canister id and the interface factory
         const tokenFaucetActor = await window.ic.plug.createActor({
             canisterId: tokenCanisterId,
             interfaceFactory: tokenFaucetIDL,
         });
 
-        // We can use any method described in the Candid (IDL)
-        // for example the get_stats()
-        // See https://github.com/dfinity/nns-dapp/blob/cd755b8/canisters/nns_ui/nns_ui.did
         const stats = await tokenFaucetActor.send_dfx(
         {
             memo: 0,
@@ -182,18 +160,24 @@
   const mint = async () => {
     loading = true;
     buttonMessage = "Setting and checking payment..."
-    let transactionPassed = await transfer();
-    if (transactionPassed) {
-      console.log("Mint");
-      buttonMessage = "Minting your nft.."
-      //const result = await nft.mint(document.location.host, {color1 : color1, color2 : color2});
-      let mintResult = await plugMint();
-      listMyTokens(principal);
-      console.log("Mint finished")
-      loading = false;
-      buttonMessage = "Mint";
-      resultMessage = mintResult;
-      return mintResult;
+    try {
+      let transactionPassed = await transfer();
+      if (transactionPassed) {
+        console.log("Mint");
+        buttonMessage = "Minting your nft.."
+        //const result = await nft.mint(document.location.host, {color1 : color1, color2 : color2});
+        let mintResult = await plugMint();
+        listMyTokens(principal);
+        console.log("Mint finished")
+        loading = false;
+        buttonMessage = "Mint";
+        resultMessage = mintResult;
+        return mintResult;
+      }
+    }
+    catch(err) {
+        console.log(err)
+        return "Something went wrong."
     }
   }
 
