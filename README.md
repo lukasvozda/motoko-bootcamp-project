@@ -21,3 +21,5 @@ dfx deploy
 npm install
 npm run dev
 ```
+
+Some things especially plug, principalIDs and payment verifications works best on the mainnet.
