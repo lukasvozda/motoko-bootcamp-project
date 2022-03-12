@@ -42,3 +42,8 @@ onMount(getColors)
 
 </header>
 
+<style>
+    nav {
+        display: none !important;
+    }
+</style>

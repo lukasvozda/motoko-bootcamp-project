@@ -23,11 +23,15 @@
     </script>
     
     <header class="App-header">
+        <h1>All Shields Minted</h1>
+    </header>
+    <body>
+        <div class="container">        
         {#each nfts as nft }
         <!-- <li>{post[0]} - {post[1].title} <button on:click={() => delete_post(post[0])} class="x">x</button></li> -->
         
         <div class="shield-minted">
-          <a href="/nft/{nft[0]}"><p>#{nft[0]}</p></a>
+          <a href="/nft/{nft[0]}" target="_blank"><p>#{nft[0]}</p></a>
           <svg width="100%" height="100%" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
             <path d="M53.75,12.87L32.53,2.87C32.365,2.791 32.183,2.75 32,2.75C31.817,2.75 31.636,2.791 31.47,2.87L10.25,12.87C10.017,12.982 9.823,13.163 9.696,13.388C9.569,13.614 9.515,13.873 9.54,14.13L12.76,44.13C12.79,44.439 12.937,44.725 13.17,44.93L31.17,60.93C31.398,61.135 31.693,61.249 32,61.249C32.307,61.249 32.602,61.135 32.83,60.93L50.83,44.93C51.064,44.725 51.21,44.439 51.24,44.13L54.46,14.13C54.485,13.873 54.431,13.614 54.304,13.388C54.177,13.163 53.983,12.982 53.75,12.87ZM48.81,43.39L32,58.33L15.19,43.39L12.13,14.75L32,5.38L51.87,14.75L48.81,43.39Z" style="fill-rule:nonzero;"/>
             <g transform="matrix(1.07222,0,0,1.07222,-2.31098,-2.26024)">
@@ -41,6 +45,7 @@
         </svg>
       </div>
       {/each}
-    </header>
+      </div>
+    </body>  
     
     

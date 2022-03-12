@@ -4,7 +4,7 @@
   import NFTDetail from "./routes/nftDetail.svelte";
   import NFTList from "./routes/nftList.svelte";
   import Intro from "./Intro.svelte"
-  import Auth from "./Auth.svelte"
+ // import Auth from "./Auth.svelte"
   import Faucet from "./routes/faucet.svelte"
   
 
@@ -21,7 +21,7 @@
             <Link class="nav-link" to="about">About</Link>
             <Link class="nav-link" to="faucet">Faucet</Link>
             <Link class="nav-link" to="nft">NFTs</Link>
-            <Auth />
+            <!-- <Auth /> We will use pluge login -->
         </nav>
     </header>
     <div>
