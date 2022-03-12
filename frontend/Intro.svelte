@@ -11,8 +11,8 @@
   let nfts = []
   let principal = ""
   let logged_in = false
-  let color1 = "#FF1616";
-  let color2 = "#0034B8";
+  let color1 = generateRandomColor();
+  let color2 = generateRandomColor();
   let buttonMessage = "Mint";
   let resultMessage = "";
 
@@ -185,6 +185,16 @@
     const result = await nft.balanceOf()
     console.log("Balance" + result)
   }
+
+  function generateRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
 
   onMount(init_plug)
 </script>
