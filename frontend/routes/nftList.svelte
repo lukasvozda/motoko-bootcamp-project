@@ -10,12 +10,15 @@
         let color2 = "#0034B8";
 
         let nfts = []
+
+        let nfts_count = 0
         
     
         const getTokenColors = async () => {
             const res = await nft.listTokenColors()
             console.log(res)
             nfts = res
+            nfts_count = nfts.length
             return nfts
         }
     
@@ -23,7 +26,7 @@
     </script>
     
     <header class="App-header">
-        <h1>All Shields Minted</h1>
+        <h1>{nfts_count} Shields minted (all owners)</h1>
     </header>
     <body>
         <div class="container">        
