@@ -20,6 +20,9 @@
         color2 = res[0].color2;
     }
 
+    var x = document.getElementById("nav");
+    x.style.display === "none";
+
 onMount(getColors)
 </script>
 

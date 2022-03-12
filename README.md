@@ -1,6 +1,6 @@
 ## DFINI∞SHIELDS motoko-bootcamp 2022 project
 
-See the live version here: https://l53cn-iiaaa-aaaah-qcwia-cai.ic0.app/about
+See the live version here: https://l53cn-iiaaa-aaaah-qcwia-cai.ic0.app
 
 DFINI∞SHIELDS is a project developed during the event of the Motoko Bootcamp 2022 run by Dfinity Community.
 
@@ -11,3 +11,12 @@ The whole work was done under quite a time pressure as I am working full time an
 Author of the project: Lukas Vozda, Twitter: @luke_rocks_icp
 
 Check my other project, the Internet Computer NFT reporting dashboard.
+
+On local run with:
+```bash
+dfx start
+dfx deploy
+
+npm install
+npm run dev
+```

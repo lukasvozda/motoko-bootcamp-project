@@ -13,7 +13,7 @@
 <div class="App">
 <Router>
     <header>
-        <nav>
+        <nav id="nav">
             <a href="/" class="logo">
                 DFINI∞SHIELDS
             </a>
