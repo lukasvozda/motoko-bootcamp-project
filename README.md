@@ -1,4 +1,5 @@
 ## DFINI∞SHIELDS motoko-bootcamp 2022 project
+![Image](https://github.com/lukasvozda/motoko-bootcamp-project/blob/main/frontend/assets/shield.png?raw=true)
 
 See the live version here: https://l53cn-iiaaa-aaaah-qcwia-cai.ic0.app
 
